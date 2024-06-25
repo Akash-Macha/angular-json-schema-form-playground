@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <h1>Configuration Component</h1>
+  <json-schema-form [schema]="schema" [data]="sample" [layout]="layout" framework="bootstrap-4"
+    (onSubmit)="onFormSubmit($event)">
+  </json-schema-form>
+
+  <hr />
+  <hr />
+
+  <div>
+    <div>
+      <h2>Before form state</h2>
+      <h3>{{formStateString}}</h3>
+    </div>
+    <div>
+      <h2>Accessing data</h2>
+      <h3>dataDictionary.currencies[0].symbol = {{formState?.currencies?.[0]?.symbol}}</h3>
+      <h3>dataDictionary.currencies[1].symbol = {{formState?.currencies?.[1]?.symbol}}</h3>
+    </div>
+
+    <hr />
+    <hr />
+
+    <div>
+      <h2>After transforming</h2>
+      <h3>{{transformedFormStateString}}</h3>
+    </div>
+
+    <div>
+      <h2>Accessing data</h2>
+      <h3>dataDictionary.currencies.EUR.symbol = {{transformedFormState?.currencies?.EUR?.symbol}}</h3>
+      <h3>dataDictionary.currencies.USD.symbol = {{transformedFormState?.currencies?.USD?.symbol}}</h3>
+    </div>
+  </div>
+
+</body>
+
+</html>
